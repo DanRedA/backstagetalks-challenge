@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+	font-family: "Roboto";
+	scroll-behavior: smooth;
+/*	scroll-snap-type: y mandatory;*/
+}
+
+@media (min-width: 992px) {
+	html {
+		scroll-snap-type: y mandatory;
+	}
+}
+
+body {
+	transition: all 0.5s;
+	background-color: #FF608C;
+}
+main {
+	
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/* mobile header */
+.header-single {
+	position: absolute;
+	padding: 20px 40px 20px 20px;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}
+.header-single img {
+	width: 260px;
+	height: auto;
+}
+
+/* desk header */
+.header-main {
+	visibility: hidden;
+	position: fixed;
+	padding: 20px 40px 20px 20px;
+	left: 0;
+	top: 0;
+	z-index: 2;
+
+	width: 100vw;
+	display: flex;
+	justify-content: space-between;
+}
+.header-main img {
+	width: 260px;
+	height: auto;
+}
+
+@media (min-width: 992px) {
+	.header-single {
+		display: none;
+	}
+	.header-main {
+		visibility: visible;
+	}
+}
+
+/* sections */
+.colored-box {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	scroll-snap-align: start;
+}
+.cover-img {
+	width: 80%;
+	max-width: 420px;
+	height: auto;
+}
+
+/* issue component's fonts */
+.issue-number {
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 25px;
+	margin-bottom: 18px;
+}
+.buy-btn {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 22px;
+	margin-bottom: 18px;
+}
+.issue-text a {
+	font-weight: bold;
+}
+
+/* fonts */
+.font-bold {
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 25px;
+}
+.font-link {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 22px;
+	margin: 18px 0;
+}
+.a-bold {
+	font-weight: bold;
+}
+
+/* footer */
+footer {
+	margin: -3rem auto 1rem auto;
+	padding: 0 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.footer-description {
+	max-width: 652px;
+	text-align: center;
+}
+.footer-menu {
+	display: none;
+}
+.contact {
+	margin: 18px 0;
+}
+
+@media (min-width: 992px) {
+
+	footer {
+		margin: 0;
+		padding: 20px;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100vw;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		pointer-events: none;
+	}
+	.footer-description {
+		max-width: 320px;
+		text-align: left;
+		pointer-events: auto;
+	}
+	.contact {
+		display: none;
+	}
+	.footer-menu {
+		display: flex;
+		margin-right: 20px;
+		pointer-events: auto;
+	}
+	.footer-menu li:hover {
+		font-weight: bold;
+	}
+}

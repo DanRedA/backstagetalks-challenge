@@ -1,0 +1,29 @@
+---
+// props
+interface Props {
+	alt: string;
+	img: string;
+	color: string;
+	number: string;
+	available: boolean;
+}
+
+const { alt, img, color, number, available } = Astro.props;
+---
+<section class="colored-box" data-color={color} id={number}>
+	<img src={img} alt={alt} class="cover-img">
+	<p class="issue-number">
+		Issue #{number}
+		{available ? "" : "is sold out"}
+	</p>
+	{available &&
+		<p class="buy-btn">
+			<a href="https://brot.sk/products/backstage-talks-issue-7">BUY HERE</a>
+		</p>
+	}
+	<p class="issue-text">
+		{available ? "or in" : "get the last pieces in"}
+		{!available && <br />}
+		<a href="http://backstagetalks.com/stacklist.php">selected stores</a>
+	</p>
+</section>

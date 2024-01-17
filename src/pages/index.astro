@@ -1,0 +1,76 @@
+---
+// layout
+import Layout from '../layouts/Layout.astro';
+
+// css
+import '../styles/backstage.css';
+
+// components
+import Issue from '../components/Issue.astro';
+
+// data
+ import issueData from '../data/issueData';
+---
+<Layout title='Backstage Talks Mag'>
+	<div class="header-single">
+		<img src="/backstage/logo.png" alt="">
+	</div>
+
+	<div class="header-main">
+		<img src="/backstage/logo.png" alt="">
+		<a class="font-bold" href="mailto:info@backstagetalks.com" class="font-link">info@backstagetalks.com</a>
+	</div>
+	
+	<main>
+		
+		<!-- issues -->
+		{issueData.map((issue) => (
+			<Issue 
+				alt={issue.alt} 
+				img={issue.img}
+				color={issue.color}
+				number={issue.number}
+				available={issue.available}
+			/>
+		))}
+
+	</main>
+	<footer>
+		<div class="footer-description">
+			<p class="font-bold">
+				Backstage Talks is a magazine of casual, but in depth dialogues on design and business. Our decisions shape and influence this complex world—to have a chance to make the right ones, we need to talk.
+			</p>
+			<small>
+				© 2024 <span><a href="http://milk.sk/" target="_blank">Published by Büro Milk</a></span>
+			</small>
+			<br />
+			<a href="#" class="font-link">Privacy Policy</a>
+		</div>
+		<div class="footer-menu">
+			<ul>
+				{issueData.map((link) => (
+					<li>
+						<a href=`#${link.number}`>Issue #{link.number}</a>
+					</li>
+				))}
+			</ul>
+		</div>
+		<div class="contact">
+			<a href="mailto:info@backstagetalks.com" class="font-link">info@backstagetalks.com</a>
+		</div>
+	</footer>
+</Layout>
+
+<script>
+	const coloredBoxes = document.querySelectorAll('.colored-box');
+
+	window.addEventListener('scroll', () => {
+		coloredBoxes.forEach(box => {
+			if (
+				box.getBoundingClientRect().top <= document.body.scrollTop
+			) {
+				document.body.style.backgroundColor = box.dataset.color;
+			}
+		});
+	});
+</script>
