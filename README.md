@@ -1,6 +1,9 @@
 # Frontend Practice Backstage Talks Challenge
+### Solution [backstagetalks-challenge.netlify.app](https://backstagetalks-challenge.netlify.app/)
+
 - [Frontend Practice](https://www.frontendpractice.com/projects/backstage-talks)
 - [Live Website](https://backstagetalks.com/)
+
 
 ## Usefull links
 - ### React solution by [willcary](https://github.com/willcary)
